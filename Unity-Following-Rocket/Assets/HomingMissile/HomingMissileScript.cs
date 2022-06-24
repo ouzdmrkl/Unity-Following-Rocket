@@ -5,6 +5,7 @@ public class HomingMissileScript : MonoBehaviour
 {
     private Transform target;
     private new Rigidbody rigidbody;
+    [SerializeField] private float rocketSpeed; // My default is 17
     
     private void Awake()
     {
@@ -27,7 +28,7 @@ public class HomingMissileScript : MonoBehaviour
 
         //transform.position += transform.up * 0.2f; // Missile moves with transform, not good enough
         
-        rigidbody.AddForce(transform.up * rigidbody.mass * 17f); // If we move with rigidbody, missile goes better
+        rigidbody.AddForce(transform.up * rigidbody.mass * rocketSpeed); // If we move with rigidbody, missile goes better
     }
     
     private void OnCollisionEnter(Collision collision)
