@@ -26,7 +26,7 @@ public class HomingMissileScript : MonoBehaviour
         transform.Rotate(-Vector3.Cross(direction, transform.up)); // Why I used cross?
         // https://docs.unity3d.com/ScriptReference/Vector3.Cross.html
 
-        //transform.position += transform.up * 0.2f; // Missile moves with transform, not good enough
+        //transform.position += transform.up * Time.deltaTime * 2f; // Missile moves with transform, not good enough
         
         rigidbody.AddForce(transform.up * rigidbody.mass * rocketSpeed); // If we move with rigidbody, missile goes better
     }
